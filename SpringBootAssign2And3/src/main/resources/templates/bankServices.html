@@ -1,0 +1,35 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<h4 t></h4>
+
+<table>
+<tr><td>Bank Name : </td><td th:text="${bank.name}"></td></tr>
+<tr><td>IFSC: </td><td th:text="${bank.ifsc}"></td></tr>
+
+</table>
+
+<p>Bank Services</p>
+<table>
+<thead>
+<tr>
+<th>Service Code</th>
+<th>Service Name</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+
+<tr th:each="service: ${bank.services}">
+<td th:text="${service.code}"></td>
+<td th:text="${service.name}"></td>
+
+</tr>
+</table>
+
+</body>
+
+<a href="/">get Bank details</a>
+
+</html>
