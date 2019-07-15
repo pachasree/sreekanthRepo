@@ -1,0 +1,68 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org">
+ 
+<head>
+<!-- CSS INCLUDE -->
+<link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous"></link>
+ 
+<!-- EOF CSS INCLUDE -->
+ 
+ 
+</head>
+
+<body>
+ 
+   <!-- START PAGE CONTAINER -->
+    <div class="container-fluid">
+        <!-- PAGE TITLE -->
+        <div class="page-title">
+            <h2>
+                <span class="fa fa-arrow-circle-o-left"></span> Add Employee info
+            </h2>
+        </div><p th:text=" ${message}"></p>
+        <!-- END PAGE TITLE -->
+        <div class="column">
+            <form action="#" th:action="@{/employee}" th:object="${employee}"
+                method="post">
+                <table>
+                <tr>
+                        <td>Id:</td>
+                        <td><input type="text" th:field="*{id}"></input></td>
+                        <td th:if="${#fields.hasErrors('id')}" th:errors="*{id}">Name
+                            Error</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Name:</td>
+                        <td><input type="text" th:field="*{name}"></input></td>
+                        <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name
+                            Error</td>
+                    </tr>
+                    <tr>
+                        <td>Address:</td>
+                        <td><input type="text" th:field="*{address}"></input></td>
+                        <td th:if="${#fields.hasErrors('address')}" th:errors="*{address}">Email
+                            Error</td>
+                    </tr>
+                    <tr>
+                        <td>Department:</td>
+                        <td><input type="text" th:field="*{department}"></input></td>
+                    </tr>
+                   
+                    <tr>
+                        <td>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+ 
+        </div>
+        <!-- END PAGE CONTENT -->
+        <!-- END PAGE CONTAINER -->
+    </div>
+    </body>
+    </html>
